@@ -1,0 +1,325 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+
+	       <!--<link rel="stylesheet" type="text/css" href="{% static 'cssheader.css' %}">-->
+		<style>
+
+
+
+
+
+
+														body{
+															      margin:0;
+															    }
+															#header{
+																	 position:relative;
+																	 width:100%;
+																	 height:100px;
+																	 background-color:#e60000;
+																	 font-size:250%;
+																	 margin:0;
+																	}
+
+															#imgg{
+																   position:absolute;
+																   left:20px;
+														           top:5px;
+																 }
+
+															#hh{
+																 position:absolute;
+																 left:115px;
+																 top:-25px;
+																 color:#330000;
+															   }
+
+															#l1{
+																 position:absolute;
+																 left:600px;
+																 top:40px;
+																 font-size:20px
+															   }
+
+															#i1{
+																 position:absolute;
+																 left:600px;
+																 top:65px;
+															   }
+
+															#l2{
+																 position:absolute;
+																 left:800px;
+																 top:40px;
+																 font-size:20px
+															   }
+
+															#i2{
+																 position:absolute;
+																 left:800px;
+																 top:65px;
+															   }
+
+															#b1{
+																 position:absolute;
+																 left:1000px;
+																 top:65px;
+															   }
+
+															#b2{
+																 position:absolute;
+																 left:1090px;
+																 top:65px;
+
+
+															   }
+
+															#a1{
+																 position:absolute;
+																 left:600px;
+																 top:93px;
+																 font-size:17px;
+																 text-decoration:none;
+																 color:black;
+																 white-space:nowrap;
+															   }
+
+															ul{
+															     list-style-type:none;
+															     margin:0;
+																 padding:0;
+																 text-decoration:none;
+																 overflow:hidden;
+																 background-color:#333;
+															   }
+
+															li a{
+																 display:block;
+																 color:#e60000;
+																 text-align:center;
+																 text-decoration:none;
+																 padding:14px 55px;
+															   }
+
+															.my{
+																 position:relative;
+															   }
+
+															li{
+															    float:left;
+															  }
+
+															li a:hover{
+																	    background-color:#e60000;
+																	    color:white;
+																	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+														#con1{
+
+															text-align:center;
+															}
+														select,input:not(#i1):not(#i2):not(#gm):not(#b1){
+												            width:300px;
+												            padding: 12px;
+												            border: 2px solid #ccc;
+												    		border-radius: 4px;
+												    		margin-bottom: 25px;
+												        	}
+													    #con2{
+
+														margin-left:300px;
+														margin-right:300px;
+														}
+														#ch1{
+														margin-top:40px;
+														margin-left:300px;}
+														.an{
+														background-color: #ddddbb;}
+														.ank{
+														background-color:white;}
+
+
+														#foo1{
+														text-align:center;
+														font-size:20px;
+														height:125px;
+														padding-top:1px;
+														padding-bottom:1px;
+														margin-top:50px;
+														margin-bottom:0;
+														background-color:#333;
+														color:#e60000;
+														line-height: 80%;
+														}
+														a.goolu{
+														text-decoration:none;}
+
+														.sticky {
+																position: fixed;
+																top: 0;
+																width: 100%;
+																}
+												        .sticky + .go1 {
+																	padding-top: 102px;
+																	}
+														#re6{
+														margin-top:50px;
+														margin-left:690px;
+														}
+
+
+														table {
+															width: 80%;
+												    border-collapse: collapse;
+												}
+
+												table, td, th {
+													height: 50px;
+													padding: 15px;
+												    text-align: right;
+												    border: 1px solid black;
+												}
+
+														</style>
+					</head>
+
+					<body>
+
+													<div id="header">
+																			 <img id ="imgg" src="/static/pv.png" alt="blood" height="90px">
+																			 <label id="hh"><h2>Blood Bank</h2><label>
+
+
+
+
+																			{% block content %}
+
+																			<form method="POST" action="/logout/">
+																				{% csrf_token %}
+																				<input type="submit" id="b1" value="Logout">
+																				</form>
+																			{% endblock content %}
+
+																		</div>
+
+
+																		<div id="my">
+																				<ul >
+																						 <li><a href="http://127.0.0.1:8000/registerasdonar/registerlist/" target="_self">SEARCH DONARS</a></li>
+																						 <li><a href="http://127.0.0.1:8000/requestblood/requestlist/" target="_self">DONATE BLOOD</a></li>
+																						 <li><a href="http://127.0.0.1:8000/requestblood" target="_self">REQUEST BLOOD</a></li>
+																						 <li><a href="http://127.0.0.1:8000/contactus" target="_self">CONTACT US</a></li>
+
+																				</ul>
+																		</div>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+											<br>
+
+
+											<div style="overflow-x:auto;">
+																<table align="center" >
+																	<tr>
+																		<th>Full Name</th>
+																		<th>Email id</th>
+																		<th>DOB</th>
+																		<th>Gender</th>
+																		<th>Blood Group</th>
+																		<th>Weight</th>
+																		<th>Mobile No</th>
+																		<th>Address</th>
+																		<th>City</th>
+																	</tr>
+
+																	<div class="registerasdonar">
+															    	{% for a in registerasdonar %}
+															    		<div class="a">
+																<tr>
+												    			<td>{{a.full_name}}</td>
+																	<td>{{a.email_id}}</td>
+																	<td>{{a.dob}}</td>
+																	<td>{{a.gender}}</td>
+																	<td>{{a.blood_group}}</td>
+																	<td>{{a.weight}}</td>
+																	<td>{{a.mobile_no}}</td>
+																	<td>{{a.address}}</td>
+																	<td>{{a.city}}</td>
+																</tr>
+																	{% endfor %}
+																	</div>
+																</div>
+														</table>
+													</div>
+
+
+
+
+													<div id="foo1">
+														<footer>
+															<p>Posted by:Pranjal Verma</p>
+															<p>
+															<address>Room-NO.3011,H-Block Hostel,GLA University,Mathura,Uttar Pradesh
+															</address>
+															</p>
+															<p>Contact information:
+															<a href="mailto:pranjal.verma_cs16@gla.ac.in" class="goolu"><span style="color:white;">pranjalverma_cs16@gla.ac.in</a>.
+															</p>
+														</footer>
+													</div>
+
+													<script>
+													window.onscroll = function() {myFunction()};
+
+													var header = document.getElementById("my");
+													var sticky = header.offsetTop;
+
+													function myFunction() {
+													  if (window.pageYOffset > sticky) {
+													    header.classList.add("sticky");
+													  } else {
+													    header.classList.remove("sticky");
+													  }
+													}
+													</script>
+
+
+
+
+
+
+
+
+
+
+
+												</body>
+												</html>

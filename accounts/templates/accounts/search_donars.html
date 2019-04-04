@@ -1,0 +1,299 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="{% static 'cssheader.css' %}">
+<style>
+#se1{
+position:relative;
+background-image: url("gol.jpg");
+background-size:100% ;
+height:481px;
+ }
+ #se2{
+ position:absolute;
+ top:150px;
+ left:250px;
+ opacity: 0.8;
+
+ }
+ select,input:not(#i1):not(#i2){
+            width:300px;
+            padding: 12px;
+            border: 2px solid #ccc;
+    		border-radius: 4px;
+    		margin-bottom: 25px;
+        	}
+
+
+#foo1{
+		text-align:center;
+		font-size:20px;
+		height:125px;
+		padding-top:1px;
+		padding-bottom:1px;
+		margin-bottom:0;
+		background-color:#333;
+		color:#e60000;
+		line-height: 80%;
+		}
+		a.goolu{
+		text-decoration:none;}
+	.an{
+		background-color: #ddddbb;
+		  }
+
+ </style>
+</head>
+<body>
+<div id="header">
+		             <img id ="imgg"src="pv.png" alt="blood" height="90px">
+		             <label id="hh"><h2>Blood Bank</h2><label>
+		    <form>
+		             <label id="l1">Email</label><br>
+		             <input id="i1" type="text">
+		             <label id="l2">Password</label>
+		             <input id ="i2" type="password">
+
+                 <form id="b1" action="{url 'accounts:login' %}" method="post"><!--accounts:name function-->
+
+		             <button id="b1" >Login</button>
+               </form>
+
+		             <a href="accounts/register_as_donar.html"><button type="submit" id="b2"  style=";
+                    border-width:1px;
+                    width: 60px;
+                    height: 21px;">Register</button></a>
+                 <!--<button formaction="/accounts/registerasdonar" id="b2" >Register</button>-->
+
+                 <!--<form  action ="{url 'accounts:register_view'}" method="post">
+                        <button id="b2" >Register</button>
+                  </form>-->
+
+
+
+
+		             <a id ="a1" href="https://www.youtube.com/" target="_blank">Forgot Password?</a>
+		    </form>
+		</div>
+		<div id="my">
+		    <ul >
+			       <li><a href="http://127.0.0.1:8000/searchdonars" target="_self">SEARCH DONARS</a></li>
+			       <li><a href="http://127.0.0.1:8000/registerasdonar" target="_self">REGISTER AS DONAR</a></li>
+			       <li><a href="http://127.0.0.1:8000/requestblood" target="_self">REQUEST BLOOD</a></li>
+			       <li><a href="http://127.0.0.1:8000/contactus" target="_self">CONTACT US</a></li>
+		    </ul>
+		</div>
+
+
+
+
+<div id="se1">
+<div id="se2">
+<fieldset class="an">
+<legend><label style="font-weight:900;">Search Blood Donars</label></legend>
+<form>
+<table>
+<tr><td><label style="font-weight:900;">Blood Group</label></td><td><label style="font-weight:900;">city</label></td><td></td></tr>
+<tr><td><input list="bg" name="bg" >
+        <datalist id="bg">
+		<option value="A+">
+		<option value="B+">
+		<option value="O+">
+		<option value="A-">
+		<option value="B-">
+		<option value="O-">
+		<option value="AB+">
+		<option value="AB-">
+		<option value="A">
+	</datalist></td>
+    <td><input list="city" name="city" >
+		<datalist id="city">
+		<option value="Ahmedabad">
+            <option value="Bengaluru/Bangalore">
+            <option value="Chandigarh">
+            <option value="Chennai">
+            <option value="Delhi">
+            <option value="Gurgaon">
+            <option value="Hyderabad/Secunderabad">
+            <option value="Kolkatta">
+            <option value="Mumbai">
+            <option value="Noida">
+            <option value="Pune">
+            <option value="Anantapur">
+            <option value="Guntakal">
+            <option value="Guntur">
+            <option value="kakinada">
+            <option value="kurnool">
+            <option value="Nellore">
+            <option value="Nizamabad">
+            <option value="Rajahmundry">
+            <option value="Tirupati">
+            <option value="Vijayawada">
+            <option value="Visakhapatnam">
+            <option value="Warangal">
+            <option value="Itanagar">
+            <option value="Guwahati">
+            <option value="Silchar">
+            <option value="Bhagalpur">
+            <option value="Patna">
+            <option value="Bhillai">
+            <option value="Bilaspur">
+            <option value="Raipur">
+            <option value="Panjim/Panaji">
+            <option value="Vasco Da Gama">
+            <option value="Ahmedabad">
+            <option value="Anand">
+            <option value="Ankleshwar">
+            <option value="Bharuch">
+            <option value="Bhavnagar">
+            <option value="Bhuj">
+            <option value="Gandhinagar">
+            <option value="Gir">
+            <option value="Jamnagar">
+            <option value="Kandla">
+            <option value="Porbandar">
+            <option value="Rajkot">
+            <option value="Surat">
+            <option value="Vadodara/Baroda">
+            <option value="Valsad">
+            <option value="Vapi">
+            <option value="Ambala">
+            <option value="Chandigarh">
+            <option value="Faridabad">
+            <option value="Gurgaon">
+            <option value="Hisar">
+            <option value="Karnal">
+            <option value="Kurukshetra">
+            <option value="Panipat">
+            <option value="Rohtak">
+            <option value="Dalhousie">
+            <option value="Dharmasala">
+            <option value="Kulu/Manali">
+            <option value="Shimla">
+            <option value="Jammu">
+            <option value="Srinagar">
+            <option value="Bokaro">
+            <option value="Dhanbad">
+            <option value="Jamshedpur">
+            <option value="Ranchi">
+            <option value="Bengaluru/Bangalore">
+            <option value="Belgaum">
+            <option value="Bellary">
+            <option value="Bidar">
+            <option value="Dharwad">
+            <option value="Gulbarga">
+            <option value="Hubli">
+            <option value="Kolar">
+            <option value="Mangalore">
+            <option value="Mysoru/Mysore">
+
+            <option value="Calicut">
+            <option value="Cochin">
+            <option value="Ernakulam">
+            <option value="Kannur">
+            <option value="Kochi">
+            <option value="Kollam">
+            <option value="Kottayam">
+            <option value="Kozhikode">
+            <option value="Palakkad">
+            <option value="Palgha">
+            <option value="Thrissur">
+            <option value="Trivandrum">
+            <option value="Bhopal">
+            <option value="Gwalior">
+            <option value="Indore">
+            <option value="Jabalpur">
+            <option value="Ujjain">
+            <option value="Ahmednagar">
+            <option value="Aurangabad">
+            <option value="Jalgaon">
+            <option value="Kolhapur">
+            <option value="Mumbai">
+            <option value="Mumbai Suburbs">
+            <option value="Nagpur">
+            <option value="Nasik">
+            <option value="Navi Mumbai">
+            <option value="Pune">
+            <option value="Solapur">
+
+            <option value="Bhubaneshwar">
+            <option value="Cuttak">
+            <option value="Paradeep">
+            <option value="Puri">
+            <option value="Rourkela">
+            <option value="Amritsar">
+            <option value="Bathinda">
+            <option value="Chandigarh">
+            <option value="Jalandhar">
+            <option value="Ludhiana">
+            <option value="Mohali">
+            <option value="Pathankot">
+            <option value="Patiala">
+            <option value="Ajmer">
+            <option value="Jaipur">
+            <option value="Jaisalmer">
+            <option value="Jodhpur">
+            <option value="Kota">
+            <option value="Udaipur">
+
+            <option value="Chennai">
+            <option value="Coimbatore">
+            <option value="Cuddalore">
+            <option value="Erode">
+            <option value="Hosur">
+            <option value="Madurai">
+            <option value="Nagerkoil">
+            <option value="Ooty">
+            <option value="Salem">
+            <option value="Thanjavur">
+            <option value="Tirunalveli">
+            <option value="Trichy">
+            <option value="Tuticorin">
+            <option value="Vellore">
+
+            <option value="Agra">
+            <option value="Aligarh">
+            <option value="Allahabad">
+            <option value="Bareilly">
+            <option value="Faizabad">
+            <option value="Ghaziabad">
+            <option value="Gorakhpur">
+            <option value="Kanpur">
+            <option value="Lucknow">
+            <option value="Mathura">
+            <option value="Meerut">
+            <option value="Moradabad">
+            <option value="Noida">
+            <option value="Varanasi/Banaras">
+
+            <option value="Durgapur">
+            <option value="Haldia">
+            <option value="Kharagpur">
+            <option value="Kolkatta">
+            <option value="Siliguri"></datalist>
+            </td>
+			<td><input type="submit" value="search" style="font-weight:900;"></td>
+			</tr>
+			</table>
+
+</form>
+</fieldset>
+</div>
+</div>
+<div id="foo1">
+<footer>
+<p>Posted by:Pranjal Verma</p>
+<p>
+<address>Room-NO.3011,H-Block Hostel,GLA University,Mathura,Uttar Pradesh
+</address>
+</p>
+<p>Contact information:
+<a href="mailto:pranjal.verma_cs16@gla.ac.in" class="goolu"><span style="color:white;">pranjalverma_cs16@gla.ac.in</a>.
+</p>
+</footer>
+</div>
+</div>
+</body>
+</html>
